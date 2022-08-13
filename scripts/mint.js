@@ -18,7 +18,7 @@ async function main() {
 
     console.log("minting NFT..")
     const mint = await chainBattles.mint();
-    console.log("NFT minted! to ", chainBattles.address);
+    console.log("NFT minted!");
 
 }
 
