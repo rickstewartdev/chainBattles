@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 
-// 0xc0e2E50DCD8A3640C6a436305EaD8a2555118521
+// 0xa75f6277f59b96398eF832148b269C7320E4835F
 
 contract ChainBattles is ERC721URIStorage {
     using Strings for uint256;
@@ -38,9 +38,9 @@ contract ChainBattles is ERC721URIStorage {
             '<text x="50%" y="50%" class="base" dominant-baseline="middle" text-anchor="middle">',
             "Levels: ",
             getLevels(tokenId),
-            "HP: ",
+            "\nHP: ",
             getHp(tokenId),
-            "Power: ",
+            "\nPower: ",
             getPower(tokenId),
             "</text>",
             "</svg>"
@@ -95,9 +95,9 @@ contract ChainBattles is ERC721URIStorage {
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
         _safeMint(msg.sender, newItemId);
-        tokenIdtoStats[newItemId].level = 0;
+        tokenIdtoStats[newItemId].level = 1;
         tokenIdtoStats[newItemId].hp = 7 + (random() % 5);
-        tokenIdtoStats[newItemId].power = (random() % 5);
+        tokenIdtoStats[newItemId].power = 1 + (random() % 5);
         _setTokenURI(newItemId, getTokenURI(newItemId));
     }
 
